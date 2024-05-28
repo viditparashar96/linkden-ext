@@ -1,0 +1,19 @@
+{
+  "name": "LinkedIn Profile Picture Replacer",
+  "version": "0.1.0",
+  "description": "Replaces all profile pictures on the LinkedIn homepage with a specified image.",
+  "permissions": ["activeTab", "declarativeContent", "scripting"],
+  "host_permissions": ["https://www.linkedin.com/feed/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["https://www.linkedin.com/feed/*"],
+      "js": ["contentScript.js"]
+    }
+  ],
+
+  "manifest_version": 3
+}
